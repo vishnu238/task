@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        header {
+            background-color: white;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .announcement {
+            background-color: #8B4513;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .thank-you {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .search-text {
+            background-color: #fff;
+            color: black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .search-container {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box {
+            width: calc(35% - 150px);
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-button {
+            padding: 10px 12px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .examples {
+            font-size: 10px;
+            margin-left: 450px;
+        }
+
+        .examples h2 {
+            display: inline-block;
+            position: relative;
+        }
+
+        .examples h2:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .category-buttons {
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .category-buttons button {
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: black;
+            border: 1px solid black;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .category-buttons button:hover {
+            background-color: #808080;
+        }
+
+        .category-buttons button.selected {
+            background-color: black;
+            color: #fff;
+        }
+
+        .subcategory-buttons {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 5px;
+            padding: 10px;
+            display: none;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .subcategory-buttons button {
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: black;
+            border: 1px solid black;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .subcategory-buttons button:hover {
+            background-color:#808080;
+        }
+
+        .subcategory-buttons button.selected {
+            background-color: black;
+            color: #fff;
+        }
+
+        .menu-list h3:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .menu-list li:hover {
+            cursor: pointer;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../image/Screenshot 2024-03-08 091136.png" alt="Logo" class="logo">
+    </header>
+
+    <div class="announcement">
+        We are getting WAY more traffic than expected and had to lower our search quality to support the traffic... please signup below so we can let you know when we fix this!
+    </div>
+    <br>
+    <div class="thank-you">
+        Thank you for signing up!
+    </div>
+    <br>
+
+    <div class="search-text">
+        Finding everything humans know about...
+    </div>
+
+    <div class="search-container">
+        <input type="text" placeholder="I want to discover..." class="search-box">
+        <button class="search-button">⌕</button>
+        <div class="examples">
+            <h2>Examples</h2>
+        </div>
+    </div>
+
+    <div class="category-buttons">
+        <button onclick="toggleButton(this)">Engineering</button>
+        <button onclick="toggleButton(this)">Science</button>
+        <button onclick="toggleButton(this)">Art</button>
+        <button onclick="toggleButton(this)">School</button>
+        <button onclick="toggleButton(this)">Technology</button>
+        <button onclick="toggleButton(this)">Hobbies</button>
+        <button onclick="toggleButton(this)">Lifestyle</button>
+        <div class="subcategory-buttons" id="subcategories-container"></div>
+    </div>
+
+    <div class="menu-list">
+        <h3>Italian Cuisine</h3>
+        <ul>
+            <h3>|_Pasta Dishes</h3>
+            <ul>
+                <li>|_Spaghetti Bolognese</li>
+                <li>|_Penne alla Vodka</li>
+            </ul>
+        
+            <h3>|_Pizza Recipes</h3>
+            <ul>
+                 <li>|_Margherita Pizza</li>
+                <li>|_Pepperoni Pizza</li>
+            </ul>
+            <h3>|_Risotto Varieties</h3>
+            <ul>
+                <li>|_Mushroom Risotto</li>
+                <li>|_Seafood Risotto</li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="menu-list">
+        <h3>Mexican Cuisine</h3>
+        <ul>
+            <h3>|_Taco Night</h3>
+            <ul>
+                <li>|_Beef Tacos</li>
+                <li>|_Chicken Tacos</li>
+            </ul>
+            <h3>|_Enchilada Recipes</h3>
+            <ul>
+                <li>|_Cheese Enchiladas</li>
+                <li>|_Chicken Enchiladas</li>
+            </ul>
+            <h3>|_Burrito Bowls</h3>
+            <ul>
+                <li>|_Vegetarian Burrito Bowls</li>
+                <li>|_Steak Burrito Bowls</li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="menu-list">
+        <h3>Asian Cuisine</h3>
+        <ul>
+            <h3>|_Stir-Fry Dishes</h3>
+            <ul>
+                <li>|_Beef and Broccoli Stir-Fry</li>
+                <li>|_Vegetable Tofu Stir-Fry</li>
+            </ul>
+            <h3>|_Curry Recipes</h3>
+            <ul>
+                <li>|_Chicken Curry</li>
+                <li>|_Vegetable Curry</li>
+            </ul>
+            <h3>|_Noodle Soups</h3>
+            <ul>
+                <li>|_Pho</li>
+                <li>|_Ramen</li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="menu-list">
+        <h3>American Classics</h3>
+        <ul>
+            <h3>|_Burger Night</h3>
+            <ul>
+                <li>|_Classic Cheeseburgers</li>
+                <li>|_Turkey Burgers</li>
+            </ul>
+            <h3>|_Mac and Cheese Varieties</h3>
+            <ul>
+                <li>|_Baked Mac and Cheese</li>
+                <li>|_Buffalo Chicken Mac and Cheese</li>
+            </ul>
+            <h3>|_BBQ Ribs</h3>
+            <ul>
+                <li>|_Sticky BBQ Ribs</li>
+                <li>|_Honey Garlic Ribs</li>
+            </ul>
+        </ul>
+    </div>
+
+    <script>
+        function toggleButton(button) {
+            var buttons = document.querySelectorAll('.category-buttons button');
+            buttons.forEach(function (btn) {
+                btn.classList.remove('selected');
+            });
+
+            button.classList.add('selected');
+
+            displaySubcategoryButtons(button.textContent);
+        }
+
+        function displaySubcategoryButtons(category) {
+            const subcategoriesContainer = document.getElementById('subcategories-container');
+            subcategoriesContainer.innerHTML = '';
+
+            const subcategories = getSubcategories(category);
+
+            const subcategoryButtons = document.createElement('div');
+            subcategories.forEach(subcategory => {
+                const button = document.createElement('button');
+                button.textContent = subcategory;
+                button.onclick = function () {
+                    alert(`Clicked on ${subcategory}`);
+                };
+                subcategoryButtons.appendChild(button);
+            });
+
+            subcategoriesContainer.appendChild(subcategoryButtons);
+            subcategoriesContainer.style.display = 'block';
+        }
+
+        function getSubcategories(category) {
+            const subcategoriesMap = {
+                'Engineering': ['Single Board Computers', 'BLDC Motor Suppliers', 'Types of Endmills', 'Types of Fasteners', 'Object Oriented Design Patterns', 'Thread Locker'],
+                'Science': ['Quantum Mechanics', 'Chemistry', 'Biology', 'Astronomy', 'Geology', 'Environmental Science'],
+                'Art': ['Visual Arts', 'Performing Arts', 'Literature', 'Film and Cinema', 'Music', 'Architecture'],
+                'School': ['Mathematics', 'History', 'English', 'Physics', 'Chemistry', 'Biology'],
+                'Technology': ['Programming', 'Web Development', 'Mobile App Development', 'Data Science', 'Artificial Intelligence', 'Networking'],
+                'Hobbies': ['Photography', 'Gardening', 'Cooking', 'Traveling', 'Gaming', 'Painting'],
+                'Lifestyle': ['Health and Fitness', 'Fashion', 'Beauty', 'Home Decor', 'Relationships', 'Personal Finance']
+            };
+
+            return subcategoriesMap[category] || [];
+        }
+
+        document.querySelectorAll('.menu-list h3').forEach(function (category) {
+            category.addEventListener('click', function () {
+                alert(`Clicked on ${category.textContent}`);
+            });
+        });
+
+        document.querySelectorAll('.menu-list li').forEach(function (menuItem) {
+            menuItem.addEventListener('click', function () {
+                alert(`Clicked on ${menuItem.textContent}`);
+            });
+        });
+
+        document.querySelector('.search-button').addEventListener('click', function () {
+            const searchTerm = document.querySelector('.search-box').value;
+            alert(`Searching for: ${searchTerm}`);
+        });
+    </script>
+</body>
+</html>
